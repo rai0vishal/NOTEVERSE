@@ -1,0 +1,149 @@
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #1f1f1f;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #e0e0e0;
+}
+
+.container {
+  background: #2b2b2b;
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+/* Header */
+.container h2 {
+  text-align: center;
+  color: #f5f5f5;
+  margin-bottom: 20px;
+}
+
+/* Input & Textarea */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  background: #1a1a1a;
+  color: #e0e0e0;
+  border: 1px solid #999;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border 0.2s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #d6af69;
+  outline: none;
+}
+
+/* Buttons */
+button {
+  padding: 10px 16px;
+  margin-top: 10px;
+  margin-right: 5px;
+  background: #b08d57;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #d6af69;
+  transform: scale(1.05);
+}
+#logoutBtn {
+  background: #444;
+  color: #fff;
+  float: right;
+  margin-bottom: 10px;
+}
+
+#logoutBtn:hover {
+  background: #666;
+}
+
+
+/* Notes */
+.note {
+  background: #1a1a1a;
+  padding: 16px;
+  margin-top: 16px;
+  border-left: 5px solid #d6af69;
+  border-radius: 8px;
+  animation: fadeIn 0.4s ease;
+}
+
+.note small {
+  display: block;
+  margin-top: 8px;
+  color: #bbbbbb;
+}
+
+/* Error */
+.error {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+#toastContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.toast {
+  padding: 12px 18px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  min-width: 200px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  opacity: 0.95;
+}
+
+.toast.success {
+  background-color: #3cb371; /* metallic green */
+}
+
+.toast.error {
+  background-color: #e74c3c; /* metallic red */
+}
+
+@keyframes fadein {
+  from {opacity: 0; transform: translateX(50px);}
+  to {opacity: 0.95; transform: translateX(0);}
+}
+
+@keyframes fadeout {
+  from {opacity: 0.95; transform: translateX(0);}
+  to {opacity: 0; transform: translateX(50px);}
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
